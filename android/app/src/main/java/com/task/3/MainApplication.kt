@@ -1,4 +1,4 @@
-package com.task_2
+package com.task.3
 
 import android.app.Application
 import com.facebook.react.PackageList
