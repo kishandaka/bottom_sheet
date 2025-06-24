@@ -7,7 +7,7 @@ import {AppLoader} from './components'
 import {AppStateContextProvider} from './hooks/useAppStateContext'
 import {AppNavigation} from './router'
 import {ThemeProvider} from './theme/ThemeProvider/ThemeProvider'
-import { LogBox } from 'react-native'
+import {LogBox} from 'react-native'
 
 LogBox.ignoreAllLogs()
 

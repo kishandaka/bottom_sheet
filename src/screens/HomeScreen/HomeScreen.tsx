@@ -1,10 +1,9 @@
 import React from 'react'
-import {Text, View} from 'react-native'
+import {View, FlatList, Text, TouchableOpacity} from 'react-native'
 
 import {myStyles} from './HomeScreen.styles'
-import {AppButton, AppContainer, AppHeader} from '@/components'
+import {AppBottomSheet, AppContainer, AppHeader, Card} from '@/components'
 import {useColor} from '@/hooks'
-import AppTextInput from '@/components/AppTextInput/AppTextInput'
 import {CommonStyles} from '@/utils'
 import useHomeScreen from './hooks/useHomeScreen'
 
@@ -13,32 +12,34 @@ interface HomeScreenProps {}
 const HomeScreen = ({}: HomeScreenProps) => {
   const colors = useColor()
   const styles = myStyles(colors)
-  const {startPoint, endPoint, startError, endError, onPressField, onConform} = useHomeScreen()
+  const {DATA, CATEGORY, isModalShow, selectedItem, onCloseModal, onPressItem} = useHomeScreen()
 
+  const renderModal = () => {
+    if (isModalShow && selectedItem) {
+      return <AppBottomSheet data={selectedItem} isVisible={isModalShow} onClose={onCloseModal} />
+    }
+  }
 
+  const separator = () => <View style={styles.separator} />
 
-  const renderInputs = () => {
+  const renderCategory = ({item}: any) => {
     return (
-      <View style={styles.inputContainer}>
-        <AppTextInput
-          title={'Start Point'}
-          value={startPoint?.ADDRESS || ''}
-          editable={false}
-          isTouchable
-          onPress={() => {
-            onPressField(0)
-          }}
-          errorMessage={startError}
-        />
-        <AppTextInput
-          title={'End Point'}
-          value={endPoint?.ADDRESS || ''}
-          onPress={() => {
-            onPressField(1)
-          }}
-          editable={false}
-          isTouchable
-          errorMessage={endError}
+      <TouchableOpacity style={styles.categoryCard}>
+        <Text style={styles.text}>{item?.title}</Text>
+      </TouchableOpacity>
+    )
+  }
+
+  const renderCategorySection = () => {
+    return (
+      <View>
+        <FlatList
+          data={CATEGORY}
+          keyExtractor={(_, index) => `item_${index}`}
+          renderItem={renderCategory}
+          // ItemSeparatorComponent={separator}
+          showsVerticalScrollIndicator={false}
+          horizontal
         />
       </View>
     )
@@ -48,9 +49,16 @@ const HomeScreen = ({}: HomeScreenProps) => {
     <AppContainer>
       <AppHeader headerTitle={'Home'} isBack={false} />
       <View style={CommonStyles.mainContainer}>
-        {renderInputs()}
-        <AppButton title={'Conform'} onPress={onConform} />
+        {renderCategorySection()}
+        <FlatList
+          data={DATA}
+          keyExtractor={(_, index) => `item_${index}`}
+          renderItem={({item}) => <Card item={item} onPress={onPressItem} />}
+          ItemSeparatorComponent={separator}
+          showsVerticalScrollIndicator={false}
+        />
       </View>
+      {renderModal()}
     </AppContainer>
   )
 }

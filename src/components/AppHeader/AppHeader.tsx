@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Image,
-  type StyleProp,
-  Text,
-  TouchableOpacity,
-  View,
-  type ViewStyle
-} from 'react-native'
+import {Image, type StyleProp, Text, TouchableOpacity, View, type ViewStyle} from 'react-native'
 
 import {myStyles} from './AppHeader.styles'
 import {useColor} from '@/hooks'
@@ -21,12 +14,7 @@ interface HeaderComponentProps {
   style?: StyleProp<ViewStyle>
 }
 
-const AppHeader = ({
-  headerTitle,
-  iconStyle,
-  style,
-  isBack = true
-}: HeaderComponentProps) => {
+const AppHeader = ({headerTitle, iconStyle, style, isBack = true}: HeaderComponentProps) => {
   const colors = useColor()
   const styles = myStyles(colors)
   const navigation: any = useNavigation()

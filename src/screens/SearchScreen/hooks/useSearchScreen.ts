@@ -37,7 +37,7 @@ const useSearchScreen = () => {
 
   const getSearchResult = () => {
     const url = `https://www.onemap.gov.sg/api/common/elastic/search?searchVal=${searchText}&returnGeom=Y&getAddrDetails=Y&pageNum=1`
-   
+
     APICall('GET', url)
       .then((response: any) => {
         console.log('response', response)

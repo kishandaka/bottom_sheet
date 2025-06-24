@@ -37,6 +37,7 @@
     "react-native-config": "^1.5.5",
     "react-native-device-info": "^14.0.4",
     "react-native-gesture-handler": "^2.26.0",
+    "react-native-modal": "^14.0.0-rc.1",
     "react-native-rename": "^3.2.16",
     "react-native-root-siblings": "^5.0.1",
     "react-native-safe-area-context": "^5.4.1",
