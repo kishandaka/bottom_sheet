@@ -306,7 +306,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.task.3";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.task.three";
 				PRODUCT_NAME = "Task3";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -334,7 +334,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.task.3";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.task.three";
 				PRODUCT_NAME = "Task3";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

@@ -1,4 +1,4 @@
-package com.task.3
+package com.task.three
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
