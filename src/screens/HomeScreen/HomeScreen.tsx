@@ -25,7 +25,7 @@ const HomeScreen = ({}: HomeScreenProps) => {
   const renderCategory = ({item}: any) => {
     return (
       <TouchableOpacity style={styles.categoryCard}>
-        <Text style={styles.text}>{item?.title}</Text>
+        <Text style={styles.categoryText}>{item?.title}</Text>
       </TouchableOpacity>
     )
   }
@@ -37,8 +37,7 @@ const HomeScreen = ({}: HomeScreenProps) => {
           data={CATEGORY}
           keyExtractor={(_, index) => `item_${index}`}
           renderItem={renderCategory}
-          // ItemSeparatorComponent={separator}
-          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           horizontal
         />
       </View>

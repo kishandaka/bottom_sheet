@@ -15,14 +15,14 @@ export const myStyles = (colors: ColorType) => {
     categoryCard: {
       backgroundColor: colors.blue80,
       paddingHorizontal: scale(10),
-      paddingVertical: verticalScale(10),
+      paddingVertical: verticalScale(15),
       borderRadius: moderateScale(15),
       marginHorizontal: scale(5),
       marginBottom: verticalScale(15)
     },
-    text: {
-      fontFamily: '600',
-      fontSize: moderateScale(12),
+    categoryText:{
+      fontWeight: '700',
+      fontSize: moderateScale(14),
       color: colors.white
     }
   })

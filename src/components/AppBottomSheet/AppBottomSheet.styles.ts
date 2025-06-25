@@ -27,15 +27,18 @@ export const myStyles = (colors: ColorType) => {
     },
     innerContainer: {
       width: '100%',
-      paddingHorizontal: scale(15)
+      paddingHorizontal: scale(15),
+      rowGap: verticalScale(10)
     },
     title: {
       fontWeight: '700',
-      fontSize: moderateScale(14)
+      fontSize: moderateScale(18),
+      color: colors.black
     },
     descStyle: {
       fontWeight: '500',
-      fontSize: moderateScale(12)
+      fontSize: moderateScale(14),
+      color: colors.black10
     }
   })
 }
